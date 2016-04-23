@@ -10,7 +10,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view, renderer_classes
 
 
-@login_required(login_url='accounts/facebook/login')
+@login_required(login_url='/accounts/facebook/login')
 @api_view(['GET'])
 @renderer_classes((JSONRenderer,))
 def callback(request):
@@ -45,9 +45,8 @@ def callback(request):
         except KeyError:
             pass
 
-    context_json = json.dumps(context)
     post_url = "http://www.aviato.space/api/facebook"
-    print(requests.post(post_url, json=context_json).status_code)
+    print(requests.post(post_url, json=context).status_code)
 
     return Response(context)
 
@@ -57,4 +56,4 @@ def facebook_redirect(request):
         some_id = request.GET["id"]
     else:
         some_id = ""
-    return HttpResponseRedirect('/callback/?id={0}'.format(some_id))
+    return HttpResponseRedirect('/callback?id={0}'.format(some_id))
