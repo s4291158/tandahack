@@ -8,5 +8,4 @@ urlpatterns = [
     url(r'^login/$', aviews.login),
     url(r'^callback/$', views.callback),
     url(r'^facebook/$', views.facebook_redirect),
-    url(r'^cian/$', views.cian)
 ]
