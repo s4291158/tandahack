@@ -46,9 +46,10 @@ def callback(request):
             pass
 
     post_url = "http://www.aviato.space/api/facebook"
-    print(requests.post(post_url, json=context).status_code)
+    requests.post(post_url, json=context)
 
-    return Response(context)
+    # return Response(context)
+    return HttpResponseRedirect("http://www.aviato.space/")
 
 
 def facebook_redirect(request):
