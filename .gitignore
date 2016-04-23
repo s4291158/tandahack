@@ -61,5 +61,6 @@ target/
 #Ipython Notebook
 .ipynb_checkpoints
 
+./idea
 db.sqlite3
 tandahack/settings.py
