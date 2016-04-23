@@ -49,7 +49,7 @@ def callback(request):
     requests.post(post_url, json=context)
 
     # return Response(context)
-    return HttpResponseRedirect("http://www.aviato.space/dashboard/")
+    return HttpResponseRedirect("http://www.aviato.space/dashboard")
 
 
 def facebook_redirect(request):
